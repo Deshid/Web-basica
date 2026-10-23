@@ -10,31 +10,6 @@ Esqueleto minimo con frontend vanilla y backend Python.
 - `backend/src/app.py`: servidor Flask y endpoint `/api/health`.
 - `backend/requirements.txt`: dependencias Python.
 
-## Instalacion de dependencias
-
-Desde `backend`, crea un entorno virtual y activa este entorno:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-Con el entorno activado, instala Flask y sus dependencias:
-
-```powershell
-pip install -r requirements.txt
-```
-
-## Ejecutar
-
-Con el entorno virtual activado y situado en `backend`, inicia el servidor:
-
-```powershell
-python -m src.app
-```
-
-Abre http://127.0.0.1:5000.
-
 ## Conceptos basicos
 
 ### Frontend
@@ -126,6 +101,31 @@ El frontend no utiliza librerias JavaScript externas: usa las funciones nativas 
 - `backend/src` contiene el codigo Python del servidor.
 
 El nombre `src` no es obligatorio para Flask ni para Python; es una convencion que ayuda a organizar el codigo y separarlo de configuraciones, dependencias y documentacion.
+
+## Instalacion de dependencias
+
+Desde `backend`, crea un entorno virtual y activa este entorno:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+Con el entorno activado, instala Flask y sus dependencias:
+
+```powershell
+pip install -r requirements.txt
+```
+
+## Ejecutar
+
+Con el entorno virtual activado y situado en `backend`, inicia el servidor:
+
+```powershell
+python -m src.app
+```
+
+Abre http://127.0.0.1:5000.
 
 ## Como funciona cada seccion
 
