@@ -65,6 +65,20 @@ En esta web Flask se utiliza para:
 
 Una API (*Application Programming Interface* o interfaz de programacion de aplicaciones) es una forma organizada para que dos programas se comuniquen. Aqui el JavaScript del navegador se comunica con Flask mediante una peticion HTTP a `/api/health`.
 
+### JSON
+
+JSON (*JavaScript Object Notation*) es un formato de texto para representar y transportar datos entre aplicaciones. Es facil de leer tanto para las personas como para los programas. Aunque su nombre contiene "JavaScript", puede utilizarse con Python, JavaScript y muchos otros lenguajes.
+
+El backend devuelve esta respuesta JSON cuando se consulta `/api/health`:
+
+```json
+{
+	"status": "ok"
+}
+```
+
+En este objeto, `status` es la clave y `ok` es su valor. Flask crea esta respuesta con `jsonify`, y el frontend la convierte en un objeto JavaScript mediante `response.json()` para poder mostrar `Backend: ok` en la pagina.
+
 ### Endpoint
 
 Un endpoint es una direccion concreta de una API que realiza una funcion. En este proyecto:
@@ -74,6 +88,14 @@ Un endpoint es una direccion concreta de una API que realiza una funcion. En est
 - `GET /<path:filename>` entrega archivos del frontend, como `src/css/styles.css` y `src/js/app.js`.
 
 `GET` indica que el navegador esta solicitando informacion. Una API mas completa podria utilizar tambien `POST` para crear datos, `PUT` para actualizarlos o `DELETE` para eliminarlos.
+
+### Por que usamos `health`
+
+`health` significa "salud" o "estado". Se utiliza como nombre habitual para un endpoint de comprobacion, tambien llamado *health check*. Su objetivo es responder rapidamente a una pregunta sencilla: "¿el backend esta activo y puede responder?".
+
+Este endpoint no consulta una base de datos ni realiza una operacion compleja. Solo devuelve `status: ok`, por lo que sirve como una primera prueba de comunicacion entre el frontend y el backend. Si el navegador recibe esa respuesta, sabemos que Flask esta ejecutandose, la ruta existe y la peticion llego correctamente.
+
+En una aplicacion mas grande, un endpoint de salud podria comprobar tambien la base de datos, otros servicios o el espacio disponible. En esta web basica solo comprueba el servidor Flask.
 
 ### Dependencias
 
@@ -129,7 +151,7 @@ La carpeta se crea con `python -m venv .venv`, se activa con `.\.venv\Scripts\Ac
 
 ### Flujo completo
 
-1. Entra en `web-basico/backend`.
+1. Entra en `web-basica/backend`.
 2. Crea y activa `.venv`.
 3. Instala las dependencias con `pip install -r requirements.txt`.
 4. Inicia Flask con `python -m src.app`.
