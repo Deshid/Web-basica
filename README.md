@@ -102,31 +102,6 @@ El frontend no utiliza librerias JavaScript externas: usa las funciones nativas 
 
 El nombre `src` no es obligatorio para Flask ni para Python; es una convencion que ayuda a organizar el codigo y separarlo de configuraciones, dependencias y documentacion.
 
-## Instalacion de dependencias
-
-Desde `backend`, crea un entorno virtual y activa este entorno:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-Con el entorno activado, instala Flask y sus dependencias:
-
-```powershell
-pip install -r requirements.txt
-```
-
-## Ejecutar
-
-Con el entorno virtual activado y situado en `backend`, inicia el servidor:
-
-```powershell
-python -m src.app
-```
-
-Abre http://127.0.0.1:5000.
-
 ## Como funciona cada seccion
 
 ### Frontend
@@ -156,3 +131,28 @@ La carpeta se crea con `python -m venv .venv`, se activa con `.\.venv\Scripts\Ac
 3. Instala las dependencias con `pip install -r requirements.txt`.
 4. Inicia Flask con `python -m src.app`.
 5. Abre `http://127.0.0.1:5000` en el navegador.
+
+## Instalacion de dependencias
+
+Desde `backend`, crea un entorno virtual y activa este entorno:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+Con el entorno activado, instala Flask y sus dependencias:
+
+```powershell
+pip install -r requirements.txt
+```
+
+## Ejecutar
+
+Con el entorno virtual activado y situado en `backend`, inicia el servidor:
+
+```powershell
+python -m src.app
+```
+
+Abre http://127.0.0.1:5000.
